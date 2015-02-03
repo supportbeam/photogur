@@ -3,6 +3,8 @@
 <!-- rails provide form helpers that write html code for creating the form
  It is now set up to work with @picture which comes from the model in the pictures controller-->
 
+ <%= link_to "Back to Pictures", pictures_url %>
+
 <%= form_for @picture do |f| %>
   <p>
     <%= f.label :artist %><br>

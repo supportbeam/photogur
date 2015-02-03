@@ -1,10 +1,12 @@
-<h1>Pictures</h1>
+<h1>Pictures (<%= @pictures.length %>)</h1>
+
+<%= link_to "New Picture", "/pictures/new" %>
 
 <!-- For each item in the pictures database, 
 display the picture title and picture artist
-and display the photo via the picture's URL -->
+and display the photo via helper tag called image_tag with picture's URL -->
 
 <% @pictures.each do |picture| %>
   <p><%= picture.title %>, <%= picture.artist %></p>
-  <img src="<%= picture.url %>">
+  <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
 <% end %>

@@ -9,3 +9,6 @@ class CreatePictures < ActiveRecord::Migration
     end
   end
 end
+
+#Migration file that provides instructions for how you want the database to be changed
+#is this the database?

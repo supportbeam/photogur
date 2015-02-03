@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'pictures#index' #make index action of pictures the home page
+
   get 'pictures' => 'pictures#index' #index action in the pictures controller
 
   post 'pictures' => 'pictures#create' # when user clicks submit buttons, it was post and update database with input from form

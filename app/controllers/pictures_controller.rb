@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
 	def index # Create action index
-		@pictures = Picture.all # refers to all the pictures
+		@pictures = Picture.all # refers to all the picture records/instances in the pictures database
 	end
 
 	def show # Create action show
@@ -9,7 +9,7 @@ class PicturesController < ApplicationController
 	end
 
 	def new
-    @picture = Picture.new
+    @picture = Picture.new #Create a new instance of the pictures database
 	end
 
 	def create
@@ -19,10 +19,9 @@ class PicturesController < ApplicationController
     else
       render :new #otherwise render the view with the action :new (new.html.erb)
     end
-		# render :text => "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 	end
 
-  private
+  private #Define a private method that is only accessable in this file
   def picture_params
     params.require(:picture).permit(:artist, :title, :url)
   end

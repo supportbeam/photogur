@@ -1,5 +1,9 @@
 <h1>Pictures</h1>
 
+<!-- For each item in the pictures database, 
+display the picture title and picture artist
+and display the photo via the picture's URL -->
+
 <% @pictures.each do |picture| %>
   <p><%= picture.title %>, <%= picture.artist %></p>
   <img src="<%= picture.url %>">

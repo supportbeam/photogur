@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   get 'pictures' => 'pictures#index' #index action in the pictures controller
 
-  get 'pictures/:id' => 'pictures#show', as: 'picture' #refer to the route as picture_path
+  post 'pictures' => 'pictures#create' # when user clicks submit buttons, it was post and update database with input from form
+  get 'pictures/new' => 'pictures#new' # request for page of forms for a new picture
+
+
+  get 'pictures/:id' => 'pictures#show', as: 'picture' #dynamic route where as: means refer to the route as picture_path
 
 
 

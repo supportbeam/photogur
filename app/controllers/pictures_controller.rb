@@ -9,11 +9,22 @@ class PicturesController < ApplicationController
 	end
 
 	def new
+    @picture = Picture.new
 	end
 
 	def create
-		render :text => "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+    @picture = Picture.new(picture_params) #make a new picture with what picture_params returns
+    if @picture.save #if the save for the picture was successful...
+      redirect_to pictures_url #go to index.html.erb page
+    else
+      render :new #otherwise render the view with the action :new (new.html.erb)
+    end
+		# render :text => "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 	end
 
+  private
+  def picture_params
+    params.require(:picture).permit(:artist, :title, :url)
+  end
 
 end

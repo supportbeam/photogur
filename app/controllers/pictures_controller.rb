@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
 		@pictures = Picture.all # refers to all the picture records/instances in the pictures database
 	end
 
-  def destroy
+  def destroy # Define destroy action 
     @picture = Picture.find(params[:id])
     @picture.destroy
     redirect_to pictures_url

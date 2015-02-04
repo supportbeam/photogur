@@ -1,6 +1,10 @@
-<!-- Using helper tag link_to to create a clickable navigation link to picture's URL -->
+<!-- Using helper tag link_to to create a clickable navigation link to picture's URL 
+When deleteing, method: :delete refers to the HTTP method to delete
+data: confirm is a rails pop up dialog box to confirm with the user
 
-<%= link_to "Back to Pictures", pictures_url %> | <%= link_to "Edit", edit_picture_path(@picture) %>
+-->
+
+<%= link_to "Back to Pictures", pictures_url %> | <%= link_to "Edit", edit_picture_path(@picture) %> | <%= link_to "Delete", @picture, method: :delete, data: {confirm: "Are you sure you want to delete this picture?"}  %>
 
 <p><%= @picture.title %>, <%= @picture.artist %></p>
 <%= image_tag @picture.url %>

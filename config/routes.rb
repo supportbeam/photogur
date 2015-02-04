@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'pictures#index' #make index action of pictures the home page
 
+  delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture" #route to delete a picture in the database
+
   get 'pictures' => 'pictures#index' #index action in the pictures controller
 
   post 'pictures' => 'pictures#create' # when user clicks submit buttons, it was post and update database with input from form
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'pictures/:id' => 'pictures#show', as: 'picture' #dynamic route where as: means refer to the route as picture_path
 
-  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture" #create route for edit page
+  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture" #create route for edit pic by id page
   patch 'pictures/:id' => "pictures#update"
 
 

@@ -4,6 +4,19 @@ class PicturesController < ApplicationController
 		@pictures = Picture.all # refers to all the picture records/instances in the pictures database
 	end
 
+  def edit
+    @picture = Picture.find(params[:id])
+  end
+
+  def update
+    @picture = Picture.find(params[:id])
+    if @picture.update_attributes(picture_params)
+      redirect_to "/pictures/#{@picture.id}"
+    else
+      render :edit
+    end
+  end
+
 	def show # Create action show
 		@picture = Picture.find(params[:id]) # refers to the picture with specific id
 	end

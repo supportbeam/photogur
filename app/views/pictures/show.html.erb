@@ -1,4 +1,6 @@
-<%= link_to "Back to Pictures", pictures_url %>
+<!-- Using helper tag link_to to create a clickable navigation link to picture's URL -->
+
+<%= link_to "Back to Pictures", pictures_url %> | <%= link_to "Edit", edit_picture_path(@picture) %>
 
 <p><%= @picture.title %>, <%= @picture.artist %></p>
 <%= image_tag @picture.url %>

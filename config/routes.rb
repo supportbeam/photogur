@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   get 'pictures/:id' => 'pictures#show', as: 'picture' #dynamic route where as: means refer to the route as picture_path
 
+  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture" #create route for edit page
+  patch 'pictures/:id' => "pictures#update"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

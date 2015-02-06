@@ -1,7 +1,8 @@
 class PicturesController < ApplicationController
 
 	def index # Create action index
-		@pictures = Picture.all # refers to all the picture records/instances in the pictures database
+		# @pictures = Picture.all # refers to all the picture records/instances in the pictures database
+    @most_recent_pictures = Picture.most_recent_five
 	end
 
   def destroy # Define destroy action 

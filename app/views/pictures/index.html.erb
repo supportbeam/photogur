@@ -1,4 +1,4 @@
-<h1>Pictures (<%= @pictures.length %>)</h1>
+<h1>Most Recent Pictures (<%= @most_recent_pictures.length %>)</h1>
 
 <%= link_to "New Picture", "/pictures/new" %>
 
@@ -6,7 +6,7 @@
 display the picture title and picture artist
 and display the photo via helper tag called image_tag with picture's URL -->
 
-<% @pictures.each do |picture| %>
+<% @most_recent_pictures.each do |picture| %>
   <p><%= picture.title %>, <%= picture.artist %></p>
   <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
 <% end %>
